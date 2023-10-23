@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Code"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Generator" Height="629" Width="320" Topmost="True">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="3" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <CheckBox Grid.Row="1"  Grid.Column="0" Grid.ColumnSpan="3" Content="Использовать специальные символы" VerticalAlignment="Top"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="12345" VerticalAlignment="Bottom"/>
+        <CheckBox Grid.Row="2"  Grid.Column="0" Grid.ColumnSpan="3" Content="Использовать строчные латинские буквы" />
+        <CheckBox Grid.Row="3"  Grid.Column="0" Grid.ColumnSpan="3" Content="Использовать заглавные латинские буквы" />
 
     </Grid>
 </Window>
