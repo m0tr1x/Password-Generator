@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,6 +28,7 @@ namespace Code
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Result.Text = "";
             // Заполняем условия для генерации
             bool?[] conditions = new bool?[6];
             conditions[0] = Special.IsChecked;
@@ -56,11 +58,34 @@ namespace Code
                 for (int i = 0; i < passNum; ++i)
                 {
                     Result.Text += Generator.GeneratePass(passLength, conditions);
+                    Result.Text += '\n';
                 }
             }
             else Result.Text = "Нельзя сгенерировать пароль из пустоты :(";
            
 
+        }
+
+        private void PassLen_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            // Регулярное выражение для проверки, содержит ли строка только числа
+            Regex regex = new Regex("[^0-9]+");
+
+            if (regex.IsMatch(e.Text))
+            {
+                e.Handled = true; // Отменить ввод, если введенный символ не является числом
+            }
+        }
+
+        private void PassNum_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            // Регулярное выражение для проверки, содержит ли строка только числа
+            Regex regex = new Regex("[^0-9]+");
+
+            if (regex.IsMatch(e.Text))
+            {
+                e.Handled = true; // Отменить ввод, если введенный символ не является числом
+            }
         }
     }
 }
