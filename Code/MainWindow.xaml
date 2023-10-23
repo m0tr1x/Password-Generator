@@ -59,6 +59,7 @@
         <TextBox x:Name="Result" Grid.Row="9" IsReadOnly="True" IsReadOnlyCaretVisible="True"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Grid.ColumnSpan="3" BorderBrush="{x:Null}"/>
         
         <Button Grid.Row="7" Content="Generate!" Grid.Column="2" Click="Button_Click"/>
+       
 
 
 
