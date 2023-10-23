@@ -9,19 +9,42 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10" />
-            <RowDefinition Height="3" />
+            <RowDefinition Height="20" />
             <RowDefinition Height="40" />
             <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
-        <CheckBox Grid.Row="1"  Grid.Column="0" Grid.ColumnSpan="3" Content="Использовать специальные символы" VerticalAlignment="Top"/>
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="12345" VerticalAlignment="Bottom"/>
-        <CheckBox Grid.Row="2"  Grid.Column="0" Grid.ColumnSpan="3" Content="Использовать строчные латинские буквы" />
-        <CheckBox Grid.Row="3"  Grid.Column="0" Grid.ColumnSpan="3" Content="Использовать заглавные латинские буквы" />
+        <CheckBox x:Name="Special" Grid.Row="1"  Grid.Column="0" Grid.ColumnSpan="3" Content="Специальные символы" VerticalAlignment="Top"/>
+        <CheckBox x:Name="Low" Grid.Row="2"  Grid.Column="0" Grid.ColumnSpan="3" Content="Строчные латинские буквы" />
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="abcdefghijklmnopqrstuvwxyz" VerticalAlignment="Center" FontFamily="Future" FontSize="8"   Foreground="#808080" Grid.ColumnSpan="3" />
+        <CheckBox x:Name="Capital" Grid.Row="3"  Grid.Column="0" Grid.ColumnSpan="3" Content="Заглавные латинские буквы" />
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="ABCDEFGHIJKLMNOPQRSTUVWXYZ" VerticalAlignment="Center" FontFamily="Future" Foreground="#808080" Grid.ColumnSpan="3" FontSize="8"  />
+        <CheckBox x:Name="Number" Grid.Row="4"  Grid.Column="0" Grid.ColumnSpan="3" Content="Цифры" />
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="0123456789" VerticalAlignment="Center" FontFamily="Future" Foreground="#808080" Grid.ColumnSpan="3" FontSize="8"  />
+        <CheckBox x:Name="Divider" Grid.Row="5"  Grid.Column="0" Grid.ColumnSpan="3" Content="Разделители" />
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="Тире и подчеркивания" VerticalAlignment="Center" FontFamily="Future" Foreground="#808080" Grid.ColumnSpan="3" FontSize="8"  />
+        <CheckBox x:Name="Space" Grid.Row="6"  Grid.Column="0" Grid.ColumnSpan="3" Content="Пробел" />
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="Количество символов" FontSize="10"/>
+        <TextBox x:Name="PassLen" Grid.Row="2" Grid.Column="2" Text="1" FontSize="10"/>
+        <TextBlock Grid.Row="3" Grid.Column="2" Text="Количество паролей" FontSize="10"/>
+        <TextBox x:Name="PassNum" Grid.Row="4" Grid.Column="2" Text="1" FontSize="10"/>
+        <TextBlock Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"   TextWrapping="Wrap" Text="Сгенерированные пароли:" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Result" Grid.Row="8" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+        <Button Grid.Row="7" Content="Generate!" Grid.Column="2" Click="Button_Click"/>
+
+
+
+
 
     </Grid>
 </Window>
